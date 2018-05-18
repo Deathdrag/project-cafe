@@ -1,0 +1,1 @@
+insert into products (supp_id,supp_name,supp_phone,supp_email,supp_address) valuse

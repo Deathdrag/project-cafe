@@ -115,8 +115,8 @@
 			<TEXTFIELD w="140" title="Entity Name">entity_name</TEXTFIELD>
 			<TEXTFIELD w="100" title="User Name">user_name</TEXTFIELD>
 			<TEXTFIELD w="100" title="Role">function_role</TEXTFIELD>
-			<CHECKBOX w="100" format="boolean" title="Super User">super_user</CHECKBOX>
-			<CHECKBOX w="75" format="boolean" title="Active">is_active</CHECKBOX>
+			<CHECKBOX w="100" format="boolean" title="Super User" ischar="true">super_user</CHECKBOX>
+			<CHECKBOX w="75" format="boolean" title="Active" ischar="true">is_active</CHECKBOX>
 			<TEXTFIELD w="100" title="Type">entity_type_name</TEXTFIELD>
 			<TEXTFIELD w="75" title="Email">primary_email</TEXTFIELD>
 			<TEXTFIELD w="75" title="Telephone">primary_telephone</TEXTFIELD>
@@ -255,7 +255,9 @@
 			<TEXTFIELD w="75" title="Version">version</TEXTFIELD>
 			<CHECKBOX w="75" format="boolean" title="Completed" ischar="true">completed</CHECKBOX>
 			<CHECKBOX w="75" format="boolean" title="Active" ischar="true">is_active</CHECKBOX>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=FORM" blankpage="yes" action="FORM" linkfield="actionvalue" title="Entry Form">form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=FORM" blankpage="yes" linkfield="actionvalue">
+				<ACTION fnct="FORM">Entry Form</ACTION>
+			</ACTIONS>
 			<GRID keyfield="field_id" name="Fields" orderby="field_order" linkfield="form_id" table="vw_fields">
 				<TEXTFIELD w="75" title="Field Order">field_order</TEXTFIELD>
 				<TEXTFIELD w="240" title="Question">question</TEXTFIELD>
@@ -294,7 +296,7 @@
 					<TEXTFIELD w="75" title="Sub Title Share">sub_title_share</TEXTFIELD>
 					<TEXTFIELD w="75" title="Sub Field Type">sub_field_type</TEXTFIELD>
 					<TEXTFIELD w="75" title="Sub Field Size">sub_field_size</TEXTFIELD>
-					<CHECKBOX w="75" format="boolean" title="Manditory">manditory</CHECKBOX>
+					<CHECKBOX w="75" format="boolean" title="Manditory" ischar="true">manditory</CHECKBOX>
 					<FORM keyfield="sub_field_id" name="Sub Fields" linkfield="field_id" table="sub_fields">
 						<TEXTAREA w="530" h="50" x="10" y="10" rows="5" title="Question">question</TEXTAREA>
 						<TEXTFIELD w="150" h="20" x="10" y="30" title="Field Order">sub_field_order</TEXTFIELD>
@@ -328,7 +330,9 @@
 			<TEXTFIELD w="150" title="Form Name">form_name</TEXTFIELD>
 			<TEXTTIMESTAMP w="100" format="date" title="Application Date">application_date</TEXTTIMESTAMP>
 			<TEXTTIMESTAMP w="100" format="date" title="Completion Date">completion_date</TEXTTIMESTAMP>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" action="ENTRYFORM" disabled="yes" linkfield="actionvalue" title="View Form">entry_form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" disabled="yes" linkfield="actionvalue">
+				<ACTION fnct="ENTRYFORM">View Form</ACTION>
+			</ACTIONS>
 			<ACTIONS>
 				<ACTION phase="2" fnct="Upd_Complete_Form">Approve</ACTION>
 				<ACTION phase="3" fnct="Upd_Complete_Form">Reject</ACTION>
@@ -340,7 +344,9 @@
 			<TEXTTIMESTAMP w="100" format="date" title="Application Date">application_date</TEXTTIMESTAMP>
 			<TEXTTIMESTAMP w="100" format="date" title="Completion Date">completion_date</TEXTTIMESTAMP>
 			<TEXTTIMESTAMP w="100" format="date" title="Approve Date">action_date</TEXTTIMESTAMP>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" action="ENTRYFORM" disabled="yes" linkfield="actionvalue" title="View Form">entry_form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" disabled="yes" linkfield="actionvalue">
+				<ACTION fnct="ENTRYFORM">View Form</ACTION>
+			</ACTIONS>
 		</GRID>
 		<GRID keyfield="entry_form_id" name="Rejected Forms" where="(approve_status = 'Rejected')" table="vw_entry_forms">
 			<TEXTFIELD w="150" title="Entity Name">entity_name</TEXTFIELD>
@@ -348,7 +354,9 @@
 			<TEXTTIMESTAMP w="100" format="date" title="Application Date">application_date</TEXTTIMESTAMP>
 			<TEXTTIMESTAMP w="100" format="date" title="Completion Date">completion_date</TEXTTIMESTAMP>
 			<TEXTTIMESTAMP w="100" format="date" title="Rejected Date">action_date</TEXTTIMESTAMP>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" action="ENTRYFORM" disabled="yes" linkfield="actionvalue" title="View Form">entry_form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" disabled="yes" linkfield="actionvalue">
+				<ACTION fnct="ENTRYFORM">View Form</ACTION>
+			</ACTIONS>
 		</GRID>
 		<GRID keyfield="form_id" name="Application Forms" orderby="form_number, form_id" table="forms">
 			<TEXTFIELD w="75" title="Form ID">form_id</TEXTFIELD>
@@ -357,7 +365,9 @@
 			<TEXTFIELD w="75" title="Version">version</TEXTFIELD>
 			<CHECKBOX w="75" format="boolean" title="Completed" ischar="true">completed</CHECKBOX>
 			<CHECKBOX w="75" format="boolean" title="Active" ischar="true">is_active</CHECKBOX>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=FORM" blankpage="true" action="FORM" linkfield="actionvalue" title="View Form">form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=FORM" blankpage="true" linkfield="actionvalue">
+				<ACTION fnct="FORM">View Form</ACTION>
+			</ACTIONS>
 			<GRID keyfield="entry_form_id" name="Application Forms" where="(approve_status = 'Draft')" linkfield="form_id" table="vw_entry_forms">
 				<TEXTFIELD w="150" title="Entity Name">entity_name</TEXTFIELD>
 				<TEXTFIELD w="150" title="Form Name">form_name</TEXTFIELD>
@@ -380,7 +390,9 @@
 			<TEXTFIELD w="75" title="Form Number">form_number</TEXTFIELD>
 			<TEXTFIELD w="350" title="Form Name">form_name</TEXTFIELD>
 			<TEXTTIMESTAMP w="150" title="Application Date">application_date</TEXTTIMESTAMP>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" action="ENTRYFORM" linkfield="actionvalue" title="View Form">entry_form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" linkfield="actionvalue">
+				<ACTION fnct="ENTRYFORM">View Form</ACTION>
+			</ACTIONS>
 			<FILES password="enter" keyfield="sys_file_id" filetable="entry_forms" name="Documents" where="(table_name='entry_forms')" linkfield="table_id" params="table_name" repository="http://localhost:8080/repository/webdav/files/" table="sys_files" username="root">
 				<TEXTFIELD w="75" title="File ID">sys_file_id</TEXTFIELD>
 				<TEXTFIELD w="175" title="File Name">file_name</TEXTFIELD>
@@ -396,14 +408,18 @@
 			<TEXTFIELD w="75" title="Approve Status">approve_status</TEXTFIELD>
 			<TEXTTIMESTAMP w="100" title="Application Date">application_date</TEXTTIMESTAMP>
 			<TEXTTIMESTAMP w="100" title="Completion Date">completion_date</TEXTTIMESTAMP>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" action="ENTRYFORM" disabled="yes" linkfield="actionvalue" title="View Form">entry_form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" disabled="yes" linkfield="actionvalue">
+				<ACTION fnct="ENTRYFORM">View Form</ACTION>
+			</ACTIONS>
 		</GRID>
 		<GRID keyfield="form_id" name="Forms" orderby="form_id" table="forms">
 			<TEXTFIELD w="75" title="Form Number">form_number</TEXTFIELD>
 			<TEXTFIELD w="150" title="Form Name">form_name</TEXTFIELD>
 			<TEXTFIELD w="75" title="Version">version</TEXTFIELD>
 			<CHECKBOX w="75" title="Completed">completed</CHECKBOX>
-			<BROWSER baseurl="http://localhost:9090/form.jsp?action=FORM" blankpage="true" action="FORM" linkfield="actionvalue" title="View Form">form_id</BROWSER>
+			<ACTIONS baseurl="http://localhost:9090/form.jsp?action=FORM" blankpage="true" linkfield="actionvalue">
+				<ACTION fnct="FORM">View Form</ACTION>
+			</ACTIONS>
 			<ACTIONS>
 				<ACTION fnct="Ins_Entry_Form">Apply Form</ACTION>
 			</ACTIONS>
@@ -502,7 +518,9 @@
 				<TEXTTIMESTAMP w="100" title="Application Date">application_date</TEXTTIMESTAMP>
 				<TEXTTIMESTAMP w="100" title="Completion Date">completion_date</TEXTTIMESTAMP>
 				<TEXTTIMESTAMP w="100" title="Approve Date">action_date</TEXTTIMESTAMP>
-				<BROWSER baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" action="ENTRYFORM" disabled="yes" linkfield="actionvalue" title="View Form">entry_form_id</BROWSER>
+				<ACTIONS baseurl="http://localhost:9090/form.jsp?action=ENTRYFORM" blankpage="true" disabled="yes" linkfield="actionvalue">
+					<ACTION fnct="ENTRYFORM">View Form</ACTION>
+				</ACTIONS>
 				<FILES password="enter" keyfield="sys_file_id" filetable="entry_forms" name="Documents" where="(table_name='entry_forms')" linkfield="table_id" params="table_name" repository="http://localhost:8080/repository/webdav/files/" table="sys_files" username="root">
 					<TEXTFIELD w="75" title="File ID">sys_file_id</TEXTFIELD>
 					<TEXTFIELD w="175" title="File Name">file_name</TEXTFIELD>

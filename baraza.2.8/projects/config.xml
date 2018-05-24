@@ -1,4 +1,4 @@
-<APPLIST mode="run" encryption="accessbaaccessba" dbclass="org.postgresql.Driver" dbpassword="Baraza2011" dbtemplate="baraza" logfile="baraza.log" greeting="Open Baraza Server" loglevel="info" dbusername="postgres" dbpath="jdbc:postgresql://localhost/postgres">
+<APPLIST dbtemplate="baraza" org="org_id" logfile="baraza.log" greeting="Open Baraza Server" mode="run" path="restorant" dbname="restorant" encryption="accessbaaccessba" dbclass="org.postgresql.Driver" dbpassword="drag747" loglevel="info" dbusername="postgres" dbpath="jdbc:postgresql://localhost/restorant" xmlfile="restorant xml">
 	<APP path="hr" dbname="hr" auth="entity" dbclass="org.postgresql.Driver" dbpassword="Baraza2011" org="org_id" dbusername="postgres" dbpath="jdbc:postgresql://localhost/hr" xmlfile="business.xml">Business</APP>
 	<APP path="hr" dbname="hr" auth="entity" dbclass="org.postgresql.Driver" dbpassword="Baraza2011" org="org_id" dbusername="postgres" dbpath="jdbc:postgresql://localhost/hr" key="hr" xmlfile="hr.xml">Human Resources</APP>
 	<APP path="hr" dbname="hr" auth="entity" dbclass="org.postgresql.Driver" dbpassword="Baraza2011" org="org_id" dbusername="postgres" dbpath="jdbc:postgresql://localhost/hr" xmlfile="payroll.xml">Payroll</APP>
@@ -17,4 +17,5 @@
 	<SERVER path="hr" dbname="hr" dbclass="org.postgresql.Driver" dbpassword="Baraza2011" disable="false" dbusername="postgres" dbpath="jdbc:postgresql://localhost/hr" xmlfile="tomcat.xml">HR Tomcat Server</SERVER>
 	<SERVER path="hr" dbname="hr" dbclass="org.postgresql.Driver" dbpassword="Baraza2011" disable="true" dbusername="postgres" dbpath="jdbc:postgresql://localhost/hr" xmlfile="mail.xml">HR Mailing Server</SERVER>
 	<APP path="cafe" dbname="cafe" dbclass="org.postgresql.Driver" dbpassword="drag747" org="org_id" dbusername="postgres" dbpath="jdbc:postgresql://localhost/cafe" key="cafe" xmlfile="cafe xml">cafe</APP>
+	<APP path="cafeteria" dbname="cafeteria" dbclass="org.postgresql.Driver" dbusername="postgres" dbpath="jdbc:postgresql://localhost/cafeteria" xmlfile="cafeteria xml" key="cafeteria">cafeteria</APP>
 </APPLIST>
